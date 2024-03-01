@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(207, 26%, 17%);
+  font-size: 16px;
+  font-family: nunitoReg;
+  color: white;
+}
+
+span {
+  font-family: nunitoLight;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@font-face {
+  font-family: nunitoLight;
+  /* src: url("fonts/NunitoSans_7pt_Condensed-Light.ttf"); */
+  src: url("fonts/NunitoSans_7pt_Condensed-ExtraLight.ttf");
+}
+@font-face {
+  font-family: nunitoReg;
+  src: url("fonts/NunitoSans_7pt_Condensed-Regular.ttf");
+  /* src: url("fonts/NunitoSans_10pt_Condensed-Regular.ttf"); */
+}
+@font-face {
+  font-family: nunitoEB;
+  src: url("fonts/NunitoSans_7pt_Expanded-ExtraBold.ttf");
+  /* src: url("fonts/NunitoSans_10pt_Expanded-ExtraBold.ttf"); */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 10%;
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+}
+
+header > p {
+  font-family: nunitoEB;
+}
+
+header button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  gap: 0.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+header button svg {
+  width: 10px;
+  height: 10px;
+}
+
+main {
+  padding: 2rem 10%;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.toggle .search {
+  background-color: hsl(209, 23%, 22%);
+  position: relative;
+  width: 25rem;
+  height: 3rem;
+  cursor: text;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.toggle .search svg {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.toggle .search svg path {
+  stroke: white;
+  stroke-width: 4;
+}
+
+.toggle .search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 85%;
+  position: absolute;
+  padding: 0.5rem;
+  margin-left: 2.5rem;
+  color: white;
+  font-family: nunitoEB;
+  font-size: 16px;
+}
+
+.toggle .search input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.toggle select {
+  height: 100%;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  color: white;
+}
+
+.toggle select option {
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 3rem;
+  height: 590px;
+  overflow-y: scroll;
+}
+
+.countries .country {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  border-radius: 0.3rem;
+}
+
+.countries .country .flag {
+  height: 50%;
+}
+
+.countries .country .flag img {
+  height: 100%;
+  width: 100%;
+}
+
+.countries .country .detail {
+  padding: 2rem;
+  height: 50%;
+  background-color: hsl(209, 23%, 22%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.countryName {
+  margin-bottom: 1rem;
+  font-family: nunitoEB;
+}
+
+span {
+  font-family: nunitoLight;
+  font-size: 0.8rem;
+}
+
+.selectedCountry > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: nunitoReg;
+  gap: 0.75rem;
+  background-color: hsl(209, 23%, 22%);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  outline: none;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.selectedCountry > button svg {
+  transform: rotate(180deg);
+  height: 12px;
+  width: 12px;
+}
+
+.selectedCountry > button svg path {
+  stroke-width: 4;
+}
+
+.country-det {
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  font-size: 14px;
+}
+
+.flagImg img {
+  width: 30rem;
+  height: 20rem;
+}
+
+.country-det .det .country-name {
+  font-family: nunitoEB;
+  /* margin-bottom: 2rem; */
+}
+
+.country-det .det {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3rem 1fr 2rem;
+}
+
+.country-det .det .about,
+.country-det .det .rel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.country-det .det p {
+  font-family: nunitoReg;
+  grid-column: 1 / 3;
+}
+
+.border {
+  grid-column: 1/3;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.border div {
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 0.25rem;
+  padding: 0.25rem 1rem;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  font-family: nunitoLight;
+}
+
+.light {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.light p {
+  color: hsl(200, 15%, 8%);
+}
+
+.light button,
+.light header,
+.light .border div {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.light .selectedCountry > button svg path {
+  stroke: hsl(200, 15%, 8%);
+}
+
+.light .toggle select {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.507);
+  color: hsl(200, 15%, 8%);
+}
+
+.light .toggle .search input {
+  color: hsl(200, 15%, 8%);
+}
+
+.light .toggle .search svg path {
+  stroke: hsl(200, 15%, 8%);
+}
+
+.light .countries .country .detail {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(200, 15%, 8%);
+}
+
+.light .toggle .search {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.light .toggle .search input::placeholder {
+  color: hsl(200, 15%, 8%);
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+
+  header > p {
+    font-size: 14px;
+  }
+
+  header button {
+    font-family: nunitoReg;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .toggle {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .toggle .search input {
+    font-family: nunitoReg;
+    font-size: 12px;
+  }
+
+  .countries {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: max-content;
+    padding: 1rem 2rem;
+  }
+
+  .countries .country .flag {
+    height: 15rem;
+  }
+
+  .country-det {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .country-det .det .country-name {
+    font-family: nunitoEB;
+    margin-bottom: 2rem;
+  }
+
+  .country-det .det {
+    width: 100%;
+  }
+}
